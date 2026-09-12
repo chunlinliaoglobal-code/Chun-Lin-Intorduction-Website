@@ -1,0 +1,52 @@
+/* Quiet typography and consistent rhythm across the academic portfolio. */
+.portfolio .masthead-inner nav{margin-top:0;gap:6px}
+.portfolio .masthead-inner nav a{min-height:60px;flex-direction:column;line-height:1.35;padding:10px 6px;font-size:14px;border-radius:6px}
+.portfolio .masthead-inner .wordmark{padding-top:24px;padding-bottom:14px;font-size:25px}
+.portfolio .layout{padding-top:36px;gap:38px}
+.portfolio .reading-pane{padding:40px 46px 44px;border-radius:10px}
+.portfolio h1{letter-spacing:-1.1px;margin-bottom:16px}
+.portfolio .lead{font-size:clamp(23px,2.2vw,29px);line-height:1.5;margin-bottom:32px}
+.portfolio .about-label{font:600 13px/1.5 var(--sans);letter-spacing:1.1px;text-transform:uppercase;color:var(--accent);margin:28px 0 10px}
+.portfolio .intro>p:not(.lead):not(.eyebrow){line-height:1.8;margin-bottom:0;max-width:72ch}
+.portfolio .intro>p + .about-label{padding-top:24px;border-top:1px solid var(--line);margin-top:24px}
+.portfolio .page-heading{padding-bottom:24px;margin-bottom:12px}
+.portfolio .page-heading .eyebrow{font-size:11px;letter-spacing:1.5px;margin-bottom:10px}
+.portfolio .entry{padding:30px 0;border-bottom-color:var(--line)}
+.portfolio .entry-top{gap:12px}
+.portfolio .entry h3{font-size:20px;line-height:1.5;letter-spacing:-.25px;text-wrap:pretty}
+.portfolio .entry .tag{font-size:12px;padding:5px 10px;border-radius:4px}
+.portfolio .meta{line-height:1.7;margin:12px 0 16px}
+.portfolio .entry p,.portfolio .entry li{line-height:1.75}
+.portfolio .group-title{margin-top:34px;margin-bottom:0;font-size:12px;letter-spacing:1.1px}
+.portfolio details{margin-top:20px;padding:14px 17px}
+.portfolio details[open] summary{margin-bottom:18px}
+.portfolio .topic-list{margin:28px 0}
+.portfolio .portrait{object-position:46% 68%;border-radius:8px}
+.portfolio .contact-section{margin-top:22px;padding:25px 30px}
+.portfolio .profile-contact a{line-height:1.7}
+@media(max-width:1100px){.portfolio .reading-pane{padding:32px}.portfolio .layout{gap:28px}.portfolio .entry h3{font-size:19px}}
+@media(max-width:700px){.portfolio .layout{padding-top:24px;gap:24px}.portfolio .reading-pane{padding:27px 23px}.portfolio .masthead-inner .wordmark{font-size:22px;padding-top:19px;padding-bottom:10px}.portfolio .entry{padding:25px 0}.portfolio .about-label{font-size:12px}.portfolio .entry h3{font-size:18px}.portfolio .contact-section{padding:23px}.portfolio .lead{font-size:24px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media print{.portfolio .reading-pane{padding:0}.portfolio .about-label{break-after:avoid}.portfolio .entry{padding:12px 0}}
+
+.portfolio .intro>p:not(.lead) + p{margin-top:18px}
+/* Portrait framing preserves the original photograph. */
+.portfolio .portrait-frame{position:relative;overflow:hidden;width:100%;aspect-ratio:1 / 1.08;border-radius:8px;margin-bottom:22px;background:var(--surface)}
+.portfolio .portrait-frame .portrait{position:absolute;width:350%;max-width:none;height:auto;left:-110%;top:-90%;margin:0;border:0;border-radius:0;box-shadow:none}
+.portfolio .menu-toggle{display:none}
+.portfolio .about-label{font-family:var(--serif);font-size:19px;font-weight:400;text-transform:none;letter-spacing:-.2px;line-height:1.5;margin-bottom:14px}
+.portfolio .page-heading h1{font-size:clamp(30px,3.2vw,42px);letter-spacing:-.8px;text-wrap:balance}
+.portfolio .group-title{font-size:14px;letter-spacing:.35px;text-transform:none;font-weight:600}
+.portfolio .masthead-inner nav a{font-weight:500;letter-spacing:.1px}
+@media(max-width:700px){
+ .portfolio .portrait-frame{width:115px;aspect-ratio:1 / 1.08;margin:0}
+ .portfolio:not(.page-about) .portrait-frame{width:66px}
+ .portfolio .about-label{font-size:18px}
+ .portfolio .masthead-inner .menu-toggle{display:flex;align-items:center;justify-content:space-between;grid-column:1/-1;grid-row:2;width:100%;padding:10px 12px;margin:0 0 12px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);font:500 14px var(--sans);cursor:pointer}
+ .portfolio .masthead-inner nav{display:none;grid-row:3;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .portfolio .masthead-inner .menu-toggle[aria-expanded="true"] + nav{display:grid}
+ .portfolio .masthead-inner .theme-control{grid-row:1}
+ .portfolio .profile .profile-meta{margin:8px 0}
+}
+@media(max-width:380px){.portfolio .portrait-frame{width:90px}.portfolio:not(.page-about) .portrait-frame{width:66px}}
+@media print{.menu-toggle{display:none!important}}

@@ -1,0 +1,32 @@
+.masthead-inner{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px}
+.masthead-inner nav{justify-content:center}
+.theme-control{display:flex;align-items:center;gap:8px;justify-self:end;white-space:nowrap;font:500 13px/1.6 var(--sans);color:#45616e}
+.theme-control select{font:500 14px var(--sans);min-width:84px;max-width:110px;padding:9px 8px;color:#2c4e5c;background:#f3f7f9;border:1px solid #cddbe2;border-radius:5px;cursor:pointer}
+.theme-control select:focus-visible{outline:3px solid #bc7946;outline-offset:3px}
+.cv-toolbar{align-items:center;flex-wrap:wrap}.cv-toolbar .theme-control{margin-left:auto}
+html[data-theme="dark"]{color-scheme:dark;--ink:#e2ebf1;--muted:#aabcc7;--accent:#9ad2e3;--line:#354958;--surface:#233744}
+html[data-theme="dark"] body,html[data-theme="dark"] .portfolio,html[data-theme="dark"] .cv-page{background:#101b24;color:#d9e5eb}
+html[data-theme="dark"] .portfolio .masthead{background:#15232e;border-top-color:#70afc2;border-bottom-color:#344754}
+html[data-theme="dark"] .reading-pane,html[data-theme="dark"] .cv-document{background:#182936;border-color:#314754;box-shadow:0 5px 24px #00000012}
+html[data-theme="dark"] .portfolio .wordmark,html[data-theme="dark"] .profile-name,html[data-theme="dark"] .portfolio h1,html[data-theme="dark"] .portfolio .entry h3,html[data-theme="dark"] .portfolio .section-heading h2,html[data-theme="dark"] .portfolio .contact-section h2{color:#e2edf2}
+html[data-theme="dark"] .portfolio .lead,html[data-theme="dark"] .portfolio .eyebrow,html[data-theme="dark"] .portfolio .skills dt,html[data-theme="dark"] .portfolio .group-title{color:#a5d0dd}
+html[data-theme="dark"] .portfolio .intro>p:not(.lead):not(.eyebrow),html[data-theme="dark"] .portfolio .entry li,html[data-theme="dark"] .portfolio .profile p,html[data-theme="dark"] .portfolio .profile .affiliation,html[data-theme="dark"] .meta strong{color:#c6d6df}
+html[data-theme="dark"] .portfolio .meta,html[data-theme="dark"] .portfolio .contact-section p:not(.eyebrow),html[data-theme="dark"] .portfolio footer,html[data-theme="dark"] .portfolio .profile .updated,html[data-theme="dark"] .paper-note{color:#adbfca}
+html[data-theme="dark"] .portfolio nav a{color:#bacbd4}
+html[data-theme="dark"] .portfolio nav a:hover,html[data-theme="dark"] .portfolio nav a.active{background:#294351;color:#cae8f0;box-shadow:inset 0 -2px #86c0d2}
+html[data-theme="dark"] .portfolio .contact-section,html[data-theme="dark"] .portfolio .skills>div,html[data-theme="dark"] .portfolio details,html[data-theme="dark"] .portfolio .topic-list span{background:#203745;border-color:#3c5564;color:#c8e0e9}
+html[data-theme="dark"] .portfolio .entry .tag,html[data-theme="dark"] .portfolio th,html[data-theme="dark"] .portfolio caption{background:#253e4d;color:#c8e3ec}
+html[data-theme="dark"] .page-heading,html[data-theme="dark"] .portfolio .entry,html[data-theme="dark"] .portfolio .group-title,html[data-theme="dark"] .portfolio details[open] summary,html[data-theme="dark"] .portfolio .table-wrap,html[data-theme="dark"] .portfolio .portrait{border-color:#364d5c}
+html[data-theme="dark"] .theme-control{color:#bed2dc}
+html[data-theme="dark"] .theme-control select{background:#243b4b;color:#dceaf0;border-color:#4c6677}
+html[data-theme="dark"] .button,html[data-theme="dark"] .cv-toolbar button{background:#b3dce7;color:#133243}
+html[data-theme="dark"] .button:hover{background:#d0e9f0}
+html[data-theme="dark"] .skip-link{background:#1b303e;color:#d5eaf2}
+html[data-theme="dark"] .cv-document details{background:transparent}
+html[data-theme="dark"] .cv-document li,html[data-theme="dark"] .cv-document .skills dd,html[data-theme="dark"] .cv-document .activities p,html[data-theme="dark"] .cv-document .small-facts{color:#c6d6df}
+html[data-theme="dark"] .cv-document th{background:#253e4d;color:#c8e3ec}
+html[data-theme="dark"] .cv-document .entry .tag{background:#253e4d;color:#c8e3ec}
+@media(max-width:1300px){.portfolio .masthead{position:relative}.masthead-inner{grid-template-columns:minmax(0,1fr) auto}.portfolio .wordmark{padding:17px 0 6px}.masthead-inner .theme-control{grid-column:2;grid-row:1;margin-top:8px}.masthead-inner nav{grid-column:1/-1;grid-row:2;padding:0 0 14px;justify-content:flex-start}.masthead-inner{gap:4px 20px}}
+@media(max-width:700px){.masthead-inner .theme-control{gap:5px}.theme-control select{font-size:14px;padding:8px 4px;min-width:76px}.portfolio .wordmark{font-size:21px;padding-bottom:8px}.theme-control>span{font-size:12px}.masthead-inner{gap:5px 12px}.masthead-inner nav{justify-content:stretch}.cv-toolbar{gap:14px}}
+@media(max-width:380px){.portfolio .wordmark{font-size:19px}.masthead-inner .theme-control>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.theme-control select{min-width:75px}}
+@media print{html[data-theme]{color-scheme:light!important;--ink:#111;--muted:#444;--accent:#164a60;--line:#ddd;--surface:#fff}.theme-control{display:none!important}html[data-theme] body,html[data-theme] .cv-page,html[data-theme] .cv-document,html[data-theme] .reading-pane,html[data-theme] .cv-document details{background:white!important;color:#111!important;box-shadow:none!important}html[data-theme] .cv-document h1,html[data-theme] .cv-document h2,html[data-theme] .cv-document h3,html[data-theme] .cv-document p,html[data-theme] .cv-document li,html[data-theme] .cv-document .meta,html[data-theme] .cv-document .meta strong{color:#111!important}html[data-theme] .cv-document .tag,html[data-theme] .cv-document th{background:#f3f3f3!important;color:#111!important}}
