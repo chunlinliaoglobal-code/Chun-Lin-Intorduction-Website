@@ -4,7 +4,7 @@
       "kind": "Manuscript in preparation",
       "title": "LoRA-MAS: Trustworthy AI through Evidence-Governed Multi-Agent Reasoning",
       "authors": "Liao, C.-L., & Chen, L.-F.",
-      "venue": "2026 · Planned submission to Omega – The International Journal of Management Science · Special Issue on Data-Enabled Analytics for Insightful and Responsible Decision-Making",
+      "venue": "2026 · Planned submission to Omega – The International Journal of Management Science (SCIE/SSCI; JCR Q1) · Special Issue on Data-Enabled Analytics for Insightful and Responsible Decision-Making",
       "note": "",
       "details": [
         "Developed an evidence-governed LoRA multi-agent framework with four QLoRA adapters and eight heterogeneous virtual experts, integrating human-in-the-loop evidence governance, provenance tracking, and confidence-aware AHP elicitation.",
@@ -17,7 +17,7 @@
       "kind": "Manuscript in preparation",
       "title": "Simulation-Based Operating-Window Optimization for Lithium-Ion Batteries Using Taguchi Design, Surrogate Modeling, and Multi-Algorithm Search",
       "authors": "Liao, C.-L. · Sole author",
-      "venue": "Planned submission to the International Journal of Innovative Computing, Information and Control (IJICIC)",
+      "venue": "Planned submission to the International Journal of Innovative Computing, Information and Control (IJICIC) (ESCI; JCR Q4; Scopus Q2)",
       "note": "Manuscript in preparation.",
       "details": [
         "Independently designed and executed a battery operating-window study combining a verified Taguchi L27 design, 27,000 Monte Carlo simulation samples, surrogate modeling, and constrained multi-algorithm optimization.",
@@ -83,7 +83,7 @@
       "title": "Enhancing the Understanding of Vector Calculus in Engineering Education Using Matplotlib for Visualization and Problem Solving",
       "authors": "Liao, C.-L., & Wang, Y.",
       "venue": "23rd Annual Hawaii International Conference on Education (HICE 2025) · Honolulu, HI, USA · January 4–7, 2025",
-      "note": "STEM Education session · Also served as session chair.",
+      "note": "STEM Education session.",
       "details": [],
       "links": [
         [
