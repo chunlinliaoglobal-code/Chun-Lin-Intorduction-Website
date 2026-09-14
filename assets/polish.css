@@ -70,3 +70,25 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 @media print{.research-entry-header{margin-bottom:8px}.research-role{font-size:11pt}.research-entry{break-inside:avoid}.research-facts{font-size:9pt}}
 
 .research-description p + p{margin-top:14px!important}
+
+/* Shared type scale and metadata rhythm, used across every topic. */
+.portfolio{--page-title-size:42px;--entry-title-size:20px;--section-title-size:18px;--metadata-size:14px}
+.portfolio h1,.portfolio .page-heading h1{font:400 var(--page-title-size)/1.35 var(--serif);letter-spacing:-.8px}
+.portfolio .entry h3,.portfolio .research-entry .entry-top h3{font:600 var(--entry-title-size)/1.5 var(--sans);letter-spacing:-.25px}
+.portfolio .about-label,.portfolio .group-title{font:600 var(--section-title-size)/1.5 var(--sans);letter-spacing:0;text-transform:none;color:var(--accent)}
+.portfolio .meta,.portfolio .research-facts{display:grid;gap:5px;font:400 var(--metadata-size)/1.7 var(--sans);color:var(--muted);margin:12px 0 17px;padding:0;border:0}
+.meta-line{display:block}
+.portfolio .meta .date-line,.portfolio .activity-date{font:400 var(--metadata-size)/1.7 var(--sans);color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:0}
+.portfolio .entry .tag,.portfolio .research-entry-header .tag{font:600 12px/1.5 var(--sans);padding:5px 10px;border-radius:4px;letter-spacing:.1px}
+.portfolio .entry p,.portfolio .entry li,.portfolio .research-description p{line-height:1.75}
+.portfolio .entry .paper-note,.portfolio .entry .small-facts{font-size:var(--metadata-size)}
+.portfolio .research-entry-header{margin-bottom:12px}
+.portfolio .entry .meta strong{font-weight:600;color:var(--ink)}
+.portfolio main{min-width:0}
+.portfolio .entry h3,.portfolio .meta-line{overflow-wrap:break-word}
+.cv-page .meta,.cv-page .research-facts{font:400 14px/1.7 var(--sans);color:var(--muted);display:grid;gap:5px}
+@media(max-width:700px){.portfolio{--page-title-size:32px;--entry-title-size:18px;--section-title-size:17px;--metadata-size:14px}.portfolio .reading-pane{padding:25px 21px}}
+@media print{.cv-page .meta,.cv-page .research-facts{font:400 9pt/1.5 Arial,sans-serif}.portfolio{--page-title-size:23pt;--entry-title-size:12pt;--section-title-size:11pt;--metadata-size:9pt}}
+
+.cv-page .date-line,.cv-page .activity-date{font:400 14px/1.7 var(--sans);color:var(--muted);font-variant-numeric:tabular-nums}
+@media print{.cv-page .date-line,.cv-page .activity-date{font:400 9pt/1.5 Arial,sans-serif}}
