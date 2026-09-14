@@ -127,10 +127,24 @@ for i, (caption, alt, width, height) in enumerate(internship_figures, 1):
 internship_gallery += '</div></section>'
 internship_gallery += '<dialog class="band-lightbox" aria-label="Internship project photo viewer"><div class="band-viewer"><button type="button" class="band-close" aria-label="Close photo viewer">Close ×</button><img class="band-full" alt=""><div class="band-controls"><button type="button" class="band-prev" aria-label="Previous photo">← Previous</button><span class="band-count" aria-live="polite"></span><button type="button" class="band-next" aria-label="Next photo">Next →</button></div></div></dialog>'
 
+
+publication_figures = [
+    ('A Conversation That Inspired My PhD Journey', 'Meeting Princeton professor Michael Littman at a conference in Hawaii. Our conversation about electromagnetism inspired me to pursue a PhD.', 'Conference photograph with Prof. Michael Littman in Hawaii', 2048, 1536),
+    ('Presenting Lung-Tumor Research', 'Poster presentation on lung-tumor segmentation at the Medical Quality Conference.', 'Lung-tumor segmentation poster presentation at the Medical Quality Conference', 1536, 2048),
+    ('Agentic IoT Platform', 'System architecture integrating Spec-RAG, LLM-assisted parser generation, multimodal anomaly detection, and event-driven agent workflows.', 'Agentic IoT platform architecture diagram', 720, 402),
+    ('Battery Operating-Window Study', 'Verified main effects on capacity retention and internal resistance from the L27 dataset (27,000 simulated observations). E represents the aging horizon, not an optimized BMS control variable.', 'Main-effects plots for charging current, discharging current, temperature, SOC, and aging horizon in the battery operating-window optimization study', 960, 526),
+]
+publication_gallery = '<section class="internship-gallery-section publication-gallery-section" aria-labelledby="publication-gallery-heading"><h2 id="publication-gallery-heading" class="group-title">Research in Focus</h2><div class="internship-gallery">'
+for i, (caption, description, alt, width, height) in enumerate(publication_figures, 1):
+    image_path = f'assets/publications/research-{i:02d}.png'
+    publication_gallery += f'<figure class="internship-figure"><a class="band-photo" href="{image_path}" target="_blank" rel="noopener noreferrer" aria-label="View research figure {i}: {esc(caption)}"><img src="{image_path}" alt="{esc(alt)}" width="{width}" height="{height}" loading="lazy" decoding="async"></a><figcaption><span class="figure-number">Fig. {i}</span><strong>{esc(caption)}</strong><p class="figure-description">{esc(description)}</p></figcaption></figure>'
+publication_gallery += '</div></section>'
+publication_gallery += '<dialog class="band-lightbox" aria-label="Research photo and figure viewer"><div class="band-viewer"><button type="button" class="band-close" aria-label="Close photo viewer">Close ×</button><img class="band-full" alt=""><div class="band-controls"><button type="button" class="band-prev" aria-label="Previous photo">← Previous</button><span class="band-count" aria-live="polite"></span><button type="button" class="band-next" aria-label="Next photo">Next →</button></div></div></dialog>'
+
 page_specs = [
     ('about', 'About Me', 'index.html', None, None),
     ('research', 'Research Experience', 'research.html', 'Research experience', research),
-    ('publications', 'Publications & Presentations', 'papers.html', 'Publications & Presentations', pubs),
+    ('publications', 'Publications & Presentations', 'papers.html', 'Publications & Presentations', pubs + publication_gallery),
     ('experience', 'Internships', 'experience.html', 'Internships', experience + internship_gallery),
     ('teaching', 'Teaching & Mentoring', 'teaching.html', 'Teaching & Mentoring', teaching),
     ('education', 'Education & Training', 'education.html', 'Education & Training', education),
@@ -153,6 +167,8 @@ for idx, (key, label, filename, title, content) in enumerate(page_specs):
     page_head = head.replace('<title>Chun-Lin Liao | Academic Portfolio</title>', '<title>'+label+' | Chun-Lin Liao</title>')
     if key == 'experience':
         page_head = page_head.replace('</head>', '<link rel="stylesheet" href="assets/internships/gallery.css?v=1"></head>')
+    if key == 'publications':
+        page_head = page_head.replace('</head>', '<link rel="stylesheet" href="assets/internships/gallery.css?v=1"><link rel="stylesheet" href="assets/publications/gallery.css?v=1"></head>')
     (D/filename).write_text(page_head+'<body class="portfolio page-'+key+'"><a class="skip-link" href="#main">Skip to content</a>'+header+'<div class="layout">'+sidebar+'<main id="main">'+main_content+footer+'</main></div><script src="assets/site.js?v=3"></script></body></html>', encoding='utf-8')
 
 (D/'cv.html').write_text(head.replace('<title>Chun-Lin Liao | Academic Portfolio</title>','<title>Chun-Lin Liao | Curriculum Vitae</title>')+'<body class="cv-page"><div class="cv-toolbar"><a href="index.html">← Academic portfolio</a><button id="print-cv">Print / save as PDF</button>'+theme_control+'</div><main class="cv-document"><h1>Chun-Lin Liao</h1><p>Mechatronic Engineering · <a href="https://en.ntnu.edu.tw/aboutus.php" target="_blank" rel="noopener noreferrer">National Taiwan Normal University</a><br>Taipei, Taiwan</p><div class="cv-contact">'+contact+'</div><h2>Research interests</h2><p>Trustworthy Agentic AI and AI-Enabled Decision Systems, focusing on evidence-grounded reasoning, explainable and uncertainty-aware decision making, AIoT (Artificial Internet of Things), and real-world AI applications. I integrate AI with connected sensors, embedded systems, and edge devices for monitoring and decision making, with applications in healthcare, public infrastructure, and enterprise workflows.</p>'+sections+'</main><script src="assets/site.js?v=3"></script></body></html>',encoding='utf-8')
