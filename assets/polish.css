@@ -68,3 +68,5 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 .cv-page .research-facts{display:grid;gap:3px}
 @media(max-width:700px){.portfolio .research-entry{padding:25px 0}.research-entry-header{align-items:flex-start;flex-wrap:wrap;gap:9px}.portfolio .research-role{font-size:18px}.portfolio .research-entry .entry-top h3{font-size:18px}.portfolio .research-facts{font-size:14px}}
 @media print{.research-entry-header{margin-bottom:8px}.research-role{font-size:11pt}.research-entry{break-inside:avoid}.research-facts{font-size:9pt}}
+
+.research-description p + p{margin-top:14px!important}
