@@ -51,19 +51,20 @@
 @media(max-width:380px){.portfolio .portrait-frame{width:90px}.portfolio:not(.page-about) .portrait-frame{width:66px}}
 @media print{.menu-toggle{display:none!important}}
 
-/* Research roles lead each card; all project details remain visible. */
-.portfolio .research-card{margin-top:24px;padding:26px 28px!important;border:1px solid var(--line)!important;border-left:4px solid var(--accent)!important;border-radius:8px;background:var(--surface)}
-.research-card-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}
+/* Research follows the open, separated entries used by Internships. */
+.portfolio .research-entry{margin:0;padding:30px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.portfolio .research-entry:last-child{border-bottom:0;padding-bottom:0}
+.research-entry-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .portfolio .research-role{font:700 19px/1.45 var(--sans);color:var(--accent);margin:0!important;letter-spacing:.1px}
-.portfolio .research-card-header .tag{order:0;flex-shrink:0;margin:0;font-size:12px}
-.portfolio .research-card .entry-top h3{font:400 23px/1.5 var(--serif);letter-spacing:-.3px;color:var(--ink)}
-.portfolio .research-facts{display:grid;gap:7px;padding:17px 0;margin:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:14px;line-height:1.6;color:var(--muted)}
+.portfolio .research-entry-header .tag{order:0;flex-shrink:0;margin:0;font-size:12px}
+.portfolio .research-entry .entry-top h3{font:600 20px/1.5 var(--sans);letter-spacing:-.25px;color:var(--ink)}
+.portfolio .research-facts{display:grid;gap:5px;padding:0;margin:12px 0 17px;border:0;font-size:14px;line-height:1.7;color:var(--muted)}
 .portfolio .research-fact:first-child{font-weight:600}
-.portfolio .research-description{font-size:15px;color:var(--ink)}
-.portfolio .research-description p{margin:0;line-height:1.8}
+.portfolio .research-description{font-size:16px;color:var(--ink)}
+.portfolio .research-description p{margin:0;line-height:1.75}
 html[data-theme="dark"] .portfolio .research-role{color:var(--accent)}
-html[data-theme="dark"] .portfolio .research-card .entry-top h3{color:var(--ink)}
+html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink)}
 .cv-page .research-role{font-weight:700;margin:0;color:var(--accent)}
 .cv-page .research-facts{display:grid;gap:3px}
-@media(max-width:700px){.portfolio .research-card{padding:21px 19px!important;margin-top:19px}.research-card-header{align-items:flex-start;flex-wrap:wrap;gap:9px}.portfolio .research-role{font-size:18px}.portfolio .research-card .entry-top h3{font-size:20px}.portfolio .research-facts{font-size:13px}}
-@media print{.research-card-header{margin-bottom:8px}.research-role{font-size:11pt}.research-card{break-inside:avoid}.research-facts{font-size:9pt}}
+@media(max-width:700px){.portfolio .research-entry{padding:25px 0}.research-entry-header{align-items:flex-start;flex-wrap:wrap;gap:9px}.portfolio .research-role{font-size:18px}.portfolio .research-entry .entry-top h3{font-size:18px}.portfolio .research-facts{font-size:14px}}
+@media print{.research-entry-header{margin-bottom:8px}.research-role{font-size:11pt}.research-entry{break-inside:avoid}.research-facts{font-size:9pt}}
