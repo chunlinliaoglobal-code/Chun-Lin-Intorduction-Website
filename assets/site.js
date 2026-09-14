@@ -14,3 +14,43 @@ document.querySelector('#print-cv')?.addEventListener('click',()=>window.print()
 if(document.body.classList.contains('cv-page')) document.querySelectorAll('details').forEach(d=>d.open=true);
 const legacyPages={research:'research.html',publications:'papers.html',experience:'experience.html',teaching:'teaching.html',education:'education.html',awards:'awards.html',leadership:'beyond-research.html'};
 if(document.body.classList.contains('page-about') && legacyPages[location.hash.slice(1)]) location.replace(legacyPages[location.hash.slice(1)]);
+
+const bandLinks = [...document.querySelectorAll('.band-photo')];
+const bandDialog = document.querySelector('.band-lightbox');
+if (bandDialog && typeof bandDialog.showModal === 'function') {
+  let bandIndex = 0;
+  let bandOpener;
+  const fullImage = bandDialog.querySelector('.band-full');
+  const count = bandDialog.querySelector('.band-count');
+  const showBandPhoto = index => {
+    bandIndex = (index + bandLinks.length) % bandLinks.length;
+    const source = bandLinks[bandIndex].querySelector('img');
+    fullImage.src = bandLinks[bandIndex].href;
+    fullImage.alt = source.alt;
+    count.textContent = `${bandIndex + 1} / ${bandLinks.length}`;
+  };
+  bandLinks.forEach((link, index) => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    bandOpener = link;
+    showBandPhoto(index);
+    bandDialog.showModal();
+    document.documentElement.classList.add('band-viewing');
+    bandDialog.querySelector('.band-close').focus();
+  }));
+  bandDialog.querySelector('.band-close').addEventListener('click', () => bandDialog.close());
+  bandDialog.querySelector('.band-prev').addEventListener('click', () => showBandPhoto(bandIndex - 1));
+  bandDialog.querySelector('.band-next').addEventListener('click', () => showBandPhoto(bandIndex + 1));
+  bandDialog.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showBandPhoto(bandIndex + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  bandDialog.addEventListener('click', event => { if (event.target === bandDialog) bandDialog.close(); });
+  bandDialog.addEventListener('close', () => {
+    document.documentElement.classList.remove('band-viewing');
+    bandOpener?.focus({preventScroll:true});
+  });
+}
+
