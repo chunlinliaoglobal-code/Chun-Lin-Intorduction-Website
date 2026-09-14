@@ -119,3 +119,6 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 @media(max-width:600px){.band-gallery{grid-template-columns:1fr;padding:14px 7px 25px;gap:14px}.band-photo{transform:rotate(-2deg)}.band-photo:nth-child(2n){transform:rotate(2deg)}.band-photo:nth-child(3){transform:rotate(-2deg)}.band-lightbox{padding:12px}.band-full{height:62dvh}.band-lightbox button{padding:8px 10px}}
 @media(prefers-reduced-motion:reduce){.band-photo,.band-lightbox[open]{animation:none!important;transition:none!important}}
 @media print{.band-gallery{gap:12px;padding:0}.band-photo:nth-child(n){transform:none;box-shadow:none}.band-photo::after,.band-lightbox{display:none!important}}
+
+/* Allow the expanded name to wrap beside the theme selector on small screens. */
+.portfolio .masthead-inner .wordmark{white-space:normal;line-height:1.4}
