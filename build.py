@@ -141,12 +141,15 @@ for i, (caption, description, alt, width, height) in enumerate(publication_figur
 publication_gallery += '</div></section>'
 publication_gallery += '<dialog class="band-lightbox" aria-label="Research photo and figure viewer"><div class="band-viewer"><button type="button" class="band-close" aria-label="Close photo viewer">Close ×</button><img class="band-full" alt=""><div class="band-controls"><button type="button" class="band-prev" aria-label="Previous photo">← Previous</button><span class="band-count" aria-live="polite"></span><button type="button" class="band-next" aria-label="Next photo">Next →</button></div></div></dialog>'
 
+teaching_gallery = '<section class="internship-gallery-section" aria-labelledby="teaching-gallery-heading"><h2 id="teaching-gallery-heading" class="group-title">Learning by Building</h2><div class="internship-gallery teaching-gallery"><figure class="internship-figure"><a class="band-photo" href="assets/teaching/traffic-light-project.png" target="_blank" rel="noopener noreferrer" aria-label="View final traffic-light controller project"><img src="assets/teaching/traffic-light-project.png" alt="Final traffic-light controller project with a development board, breadboard wiring, and seven-segment displays" width="2048" height="1536" loading="lazy" decoding="async"></a><figcaption><span class="figure-number">Fig. 1</span>Final Traffic-Light Controller Project</figcaption></figure></div></section>'
+teaching_gallery += '<dialog class="band-lightbox" aria-label="Teaching project photo viewer"><div class="band-viewer"><button type="button" class="band-close" aria-label="Close photo viewer">Close ×</button><img class="band-full" alt=""><div class="band-controls"><button type="button" class="band-prev" aria-label="Previous photo" hidden>← Previous</button><span class="band-count" aria-live="polite"></span><button type="button" class="band-next" aria-label="Next photo" hidden>Next →</button></div></div></dialog>'
+
 page_specs = [
     ('about', 'About Me', 'index.html', None, None),
     ('research', 'Research Experience', 'research.html', 'Research experience', research),
     ('publications', 'Publications & Presentations', 'papers.html', 'Publications & Presentations', pubs + publication_gallery),
     ('experience', 'Internships', 'experience.html', 'Internships', experience + internship_gallery),
-    ('teaching', 'Teaching & Mentoring', 'teaching.html', 'Teaching & Mentoring', teaching),
+    ('teaching', 'Teaching & Mentoring', 'teaching.html', 'Teaching & Mentoring', teaching + teaching_gallery),
     ('education', 'Education & Training', 'education.html', 'Education & Training', education),
     ('awards', 'Honors & Awards', 'awards.html', 'Honors & Awards', awards),
     ('leadership', 'Beyond Research', 'beyond-research.html', 'Beyond Research', leadership + live_band_gallery),
@@ -169,6 +172,8 @@ for idx, (key, label, filename, title, content) in enumerate(page_specs):
         page_head = page_head.replace('</head>', '<link rel="stylesheet" href="assets/internships/gallery.css?v=1"></head>')
     if key == 'publications':
         page_head = page_head.replace('</head>', '<link rel="stylesheet" href="assets/internships/gallery.css?v=1"><link rel="stylesheet" href="assets/publications/gallery.css?v=1"></head>')
+    if key == 'teaching':
+        page_head = page_head.replace('</head>', '<link rel="stylesheet" href="assets/internships/gallery.css?v=1"><link rel="stylesheet" href="assets/teaching/gallery.css?v=1"></head>')
     (D/filename).write_text(page_head+'<body class="portfolio page-'+key+'"><a class="skip-link" href="#main">Skip to content</a>'+header+'<div class="layout">'+sidebar+'<main id="main">'+main_content+footer+'</main></div><script src="assets/site.js?v=3"></script></body></html>', encoding='utf-8')
 
 (D/'cv.html').write_text(head.replace('<title>Chun-Lin Liao | Academic Portfolio</title>','<title>Chun-Lin Liao | Curriculum Vitae</title>')+'<body class="cv-page"><div class="cv-toolbar"><a href="index.html">← Academic portfolio</a><button id="print-cv">Print / save as PDF</button>'+theme_control+'</div><main class="cv-document"><h1>Chun-Lin Liao</h1><p>Mechatronic Engineering · <a href="https://en.ntnu.edu.tw/aboutus.php" target="_blank" rel="noopener noreferrer">National Taiwan Normal University</a><br>Taipei, Taiwan</p><div class="cv-contact">'+contact+'</div><h2>Research interests</h2><p>Trustworthy Agentic AI and AI-Enabled Decision Systems, focusing on evidence-grounded reasoning, explainable and uncertainty-aware decision making, AIoT (Artificial Internet of Things), and real-world AI applications. I integrate AI with connected sensors, embedded systems, and edge devices for monitoring and decision making, with applications in healthcare, public infrastructure, and enterprise workflows.</p>'+sections+'</main><script src="assets/site.js?v=3"></script></body></html>',encoding='utf-8')
