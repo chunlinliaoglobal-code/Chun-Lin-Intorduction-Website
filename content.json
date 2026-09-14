@@ -33,7 +33,7 @@
       "title": "Traceable Spec-RAG for Evidence-Grounded Binary Parser Synthesis",
       "authors": "Liao, C.-L., Wu, C.-H., & Wu, S.-D.",
       "venue": "31st International Conference on Technologies and Applications of Artificial Intelligence (TAAI 2026) · New Taipei City, Taiwan · Conference expected to take place on November 20–21, 2026",
-      "note": "Submitted. Acceptance pending.",
+      "note": "Submitted. Acceptance pending. The paper will be submitted for selection for inclusion in the post-proceedings published in Springer’s Communications in Computer and Information Science (CCIS) series. The CCIS series is indexed in Scopus, EI Compendex, and DBLP.",
       "details": [
         "Proposed a structure-aware, field-oriented Spec-RAG framework to convert heterogeneous, versioned protocol specifications into traceable binary parser schemas through structured evidence representation and field-specific retrieval.",
         "Built an evidence pipeline with hybrid retrieval, protocol-version filtering, field-level coverage and conflict checks, provenance tracking, and no-evidence / bounded-repair mechanisms to prevent unsupported or cross-protocol parser generation.",
@@ -43,6 +43,10 @@
         [
           "https://taai2026.github.io/",
           "Conference website"
+        ],
+        [
+          "https://link.springer.com/series/7899",
+          "CCIS series & indexing"
         ]
       ]
     },
