@@ -92,3 +92,12 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 
 .cv-page .date-line,.cv-page .activity-date{font:400 14px/1.7 var(--sans);color:var(--muted);font-variant-numeric:tabular-nums}
 @media print{.cv-page .date-line,.cv-page .activity-date{font:400 9pt/1.5 Arial,sans-serif}}
+
+/* Original concert photographs retain their full aspect ratios. */
+.band-gallery-section{margin-top:34px;padding-top:8px;border-top:1px solid var(--line)}
+.band-gallery{columns:2;column-gap:16px;margin-top:20px}
+.band-photo{display:block;break-inside:avoid;margin:0 0 16px;overflow:hidden;border-radius:5px;background:var(--surface)}
+.band-photo img{display:block;width:100%;height:auto}
+.band-photo:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:600px){.band-gallery{columns:1}}
+@media print{.band-gallery{columns:2}.band-gallery-section{break-before:page}}
