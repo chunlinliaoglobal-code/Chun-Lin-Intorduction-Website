@@ -11,7 +11,12 @@
         "Designed a white-box decision-assurance pipeline combining reciprocity-preserving Z-number uncertainty modeling, consistency-ratio auditing, and deterministic logarithmic least-squares repair for traceable and mathematically controlled AI-assisted decision making.",
         "Reported Spearman ρ = 0.925, Kendall τ = 0.878, Pearson r = 0.976, and 100% Top-5 agreement with published Supply Chain 5.0 human-expert results. Conducted cross-domain boundary audits on Project Management and Medical Alliance benchmarks."
       ],
-      "links": []
+      "links": [
+        [
+          "https://www.sciencedirect.com/special-issue/10GMWX3GDSQ",
+          "Omega special issue"
+        ]
+      ]
     },
     {
       "kind": "Submitted",
@@ -26,7 +31,12 @@
         "In simulation, service-aware optimization shifted the optimal charging rate from 1.00 C to 1.50 C, while maintaining 1.00 C discharge, 20 °C, and approximately 50% SOC. At 300 cycles, PSO achieved 87.57% capacity retention and 58.34 mΩ internal resistance: a 1.025 percentage-point capacity penalty and 0.502 mΩ resistance increase relative to the degradation-only optimum.",
         "Earlier version: externally peer reviewed at Expert Systems (Wiley), with three reviewer reports, including one recommendation for major revision. The manuscript was subsequently substantially revised in response to the reviews, with expanded surrogate and optimizer baselines, leakage-aware validation, multi-objective weighting analysis, noise-robustness evaluation, stronger research-gap positioning, and improved methodological reporting. The current manuscript has been submitted to IJICIC."
       ],
-      "links": []
+      "links": [
+        [
+          "http://www.ijicic.org/",
+          "IJICIC journal website"
+        ]
+      ]
     },
     {
       "kind": "Submitted · Full paper",
