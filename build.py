@@ -113,11 +113,25 @@ footer='<footer><span>© 2026 Chun-Lin Liao</span></footer>'
 live_band_gallery = '<div class="band-gallery-section" aria-labelledby="live-band-heading"><h2 id="live-band-heading" class="group-title">Off the Clock, On Stage</h2><div class="band-gallery"><a href="assets/live-band/live-band-01.jpg" target="_blank" rel="noopener noreferrer" class="band-photo" aria-label="View live band photo 1 at full size"><img src="assets/live-band/live-band-01.jpg" alt="Live band performance with keytar, guitar, and vocals under blue stage lighting" width="2048" height="1366" loading="lazy" decoding="async"></a><a href="assets/live-band/live-band-02.jpg" target="_blank" rel="noopener noreferrer" class="band-photo" aria-label="View live band photo 2 at full size"><img src="assets/live-band/live-band-02.jpg" alt="Live stage performance with keytar and keyboard under warm spotlights" width="434" height="578" loading="lazy" decoding="async"></a><a href="assets/live-band/live-band-03.jpg" target="_blank" rel="noopener noreferrer" class="band-photo" aria-label="View live band photo 3 at full size"><img src="assets/live-band/live-band-03.jpg" alt="Keyboard performance with a drummer in the background under blue lighting" width="2048" height="1362" loading="lazy" decoding="async"></a><a href="assets/live-band/live-band-04.jpg" target="_blank" rel="noopener noreferrer" class="band-photo" aria-label="View live band photo 4 at full size"><img src="assets/live-band/live-band-04.jpg" alt="Keyboard performance in a white shirt and tie under purple stage lighting" width="2048" height="1365" loading="lazy" decoding="async"></a></div></div>'
 live_band_gallery += '<dialog class="band-lightbox" aria-label="Live Band photo viewer"><div class="band-viewer"><button type="button" class="band-close" aria-label="Close photo viewer">Close ×</button><img class="band-full" alt=""><div class="band-controls"><button type="button" class="band-prev" aria-label="Previous photo">← Previous</button><span class="band-count" aria-live="polite"></span><button type="button" class="band-next" aria-label="Next photo">Next →</button></div></div></dialog>'
 
+
+internship_figures = [
+    ('Pipeline Annotation with LLM-Automated Workflows', 'Pipeline annotation interface with LLM-assisted automation; project and account details redacted', 1813, 868),
+    ('Binary Classification Training Results', 'Binary classification training results comparing model outcomes in a twelve-panel plot', 945, 679),
+    ('Audit AI — Corporate Auditing System', 'Ucore Audit AI corporate auditing system login interface', 1917, 908),
+    ('Edge Computing with Genio 1200', 'Genio 1200 development board for edge computing', 917, 768),
+]
+internship_gallery = '<section class="internship-gallery-section" aria-labelledby="internship-gallery-heading"><h2 id="internship-gallery-heading" class="group-title">From Ideas to Impact</h2><div class="internship-gallery">'
+for i, (caption, alt, width, height) in enumerate(internship_figures, 1):
+    image_path = f'assets/internships/project-{i:02d}.png'
+    internship_gallery += f'<figure class="internship-figure"><a class="band-photo" href="{image_path}" target="_blank" rel="noopener noreferrer" aria-label="View figure {i}: {esc(caption)}"><img src="{image_path}" alt="{esc(alt)}" width="{width}" height="{height}" loading="lazy" decoding="async"></a><figcaption><span class="figure-number">Fig. {i}</span>{esc(caption)}</figcaption></figure>'
+internship_gallery += '</div></section>'
+internship_gallery += '<dialog class="band-lightbox" aria-label="Internship project photo viewer"><div class="band-viewer"><button type="button" class="band-close" aria-label="Close photo viewer">Close ×</button><img class="band-full" alt=""><div class="band-controls"><button type="button" class="band-prev" aria-label="Previous photo">← Previous</button><span class="band-count" aria-live="polite"></span><button type="button" class="band-next" aria-label="Next photo">Next →</button></div></div></dialog>'
+
 page_specs = [
     ('about', 'About Me', 'index.html', None, None),
     ('research', 'Research Experience', 'research.html', 'Research experience', research),
     ('publications', 'Publications & Presentations', 'papers.html', 'Publications & Presentations', pubs),
-    ('experience', 'Internships', 'experience.html', 'Internships', experience),
+    ('experience', 'Internships', 'experience.html', 'Internships', experience + internship_gallery),
     ('teaching', 'Teaching & Mentoring', 'teaching.html', 'Teaching & Mentoring', teaching),
     ('education', 'Education & Training', 'education.html', 'Education & Training', education),
     ('awards', 'Honors & Awards', 'awards.html', 'Honors & Awards', awards),
@@ -137,6 +151,8 @@ for idx, (key, label, filename, title, content) in enumerate(page_specs):
         page_heading = '<div class="page-heading"><p class="eyebrow">'+f'{idx:02d}'+' / '+label.upper()+'</p><h1>'+title+'</h1></div>'
         main_content = '<div class="reading-pane"><section id="'+key+'" class="topic-section">'+page_heading+content+'</section></div>'
     page_head = head.replace('<title>Chun-Lin Liao | Academic Portfolio</title>', '<title>'+label+' | Chun-Lin Liao</title>')
+    if key == 'experience':
+        page_head = page_head.replace('</head>', '<link rel="stylesheet" href="assets/internships/gallery.css?v=1"></head>')
     (D/filename).write_text(page_head+'<body class="portfolio page-'+key+'"><a class="skip-link" href="#main">Skip to content</a>'+header+'<div class="layout">'+sidebar+'<main id="main">'+main_content+footer+'</main></div><script src="assets/site.js?v=3"></script></body></html>', encoding='utf-8')
 
 (D/'cv.html').write_text(head.replace('<title>Chun-Lin Liao | Academic Portfolio</title>','<title>Chun-Lin Liao | Curriculum Vitae</title>')+'<body class="cv-page"><div class="cv-toolbar"><a href="index.html">← Academic portfolio</a><button id="print-cv">Print / save as PDF</button>'+theme_control+'</div><main class="cv-document"><h1>Chun-Lin Liao</h1><p>Mechatronic Engineering · <a href="https://en.ntnu.edu.tw/aboutus.php" target="_blank" rel="noopener noreferrer">National Taiwan Normal University</a><br>Taipei, Taiwan</p><div class="cv-contact">'+contact+'</div><h2>Research interests</h2><p>Trustworthy Agentic AI and AI-Enabled Decision Systems, focusing on evidence-grounded reasoning, explainable and uncertainty-aware decision making, AIoT (Artificial Internet of Things), and real-world AI applications. I integrate AI with connected sensors, embedded systems, and edge devices for monitoring and decision making, with applications in healthcare, public infrastructure, and enterprise workflows.</p>'+sections+'</main><script src="assets/site.js?v=3"></script></body></html>',encoding='utf-8')
