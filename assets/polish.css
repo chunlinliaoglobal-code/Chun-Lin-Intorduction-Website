@@ -123,9 +123,8 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 /* Allow the expanded name to wrap beside the theme selector on small screens. */
 .portfolio .masthead-inner .wordmark{white-space:normal;line-height:1.4}
 
-/* Keep the sticky portrait close to the desktop masthead. */
-@media(min-width:1201px){.portfolio .profile{top:104px}}
-@media(min-width:1201px) and (max-width:1350px){.portfolio .masthead{position:relative}.portfolio .profile{top:24px}}
+/* Keep the profile in the document flow instead of following the viewport. */
+.portfolio .profile{position:static;top:auto}
 
 /* Keep entry statuses aligned at the right edge and clarify research hierarchy. */
 .portfolio .entry-top,.portfolio .research-entry-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:12px}
@@ -134,3 +133,27 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 .portfolio .research-topic{font:600 16px/1.65 var(--sans);color:var(--accent);margin:2px 0 0!important}
 html[data-theme="dark"] .portfolio .entry h3.research-role{color:var(--ink)}
 @media(max-width:700px){.portfolio .research-topic{font-size:15px}.portfolio .research-entry-header{flex-wrap:nowrap}}
+
+/* Teaching uses the same role-first hierarchy as research. */
+.portfolio .teaching-entry{margin:0;padding:30px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.portfolio .teaching-entry:last-child{border-bottom:0;padding-bottom:0}
+.portfolio .teaching-entry-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:12px;margin-bottom:2px}
+.portfolio .teaching-entry-header .tag{grid-column:2;justify-self:end;margin:0}
+.portfolio .entry h3.teaching-role{font:700 var(--entry-title-size)/1.5 var(--sans);color:var(--ink);letter-spacing:-.25px;margin:0!important}
+.portfolio .teaching-topic{font:600 16px/1.65 var(--sans);color:var(--accent);margin:2px 0 0!important}
+.portfolio .teaching-facts{margin:12px 0 17px}
+.portfolio .teaching-description p{line-height:1.75}
+html[data-theme="dark"] .portfolio .entry h3.teaching-role{color:var(--ink)}
+@media(max-width:700px){.portfolio .teaching-entry{padding:25px 0}.portfolio .teaching-topic{font-size:15px}}
+
+/* Slightly larger type throughout the portfolio while preserving hierarchy. */
+.portfolio{--page-title-size:44px;--entry-title-size:21px;--section-title-size:19px;--metadata-size:15px;font-size:17px}
+.portfolio .masthead-inner nav a{font-size:15px}
+.portfolio .profile-name{font-size:23px}
+.portfolio .profile p,.portfolio .profile-meta,.portfolio .profile-contact,.portfolio .cv-link{font-size:15px}
+.portfolio .profile .affiliation{font-size:16px}
+.portfolio .intro>p:not(.lead):not(.eyebrow){font-size:17px}
+.portfolio .topic-list span,.portfolio .links a,.portfolio summary,.portfolio table{font-size:15px}
+.portfolio .activities strong{font-size:17px}
+.portfolio .activities p{font-size:15px}
+@media(max-width:700px){.portfolio{--page-title-size:34px;--entry-title-size:19px;--section-title-size:18px;--metadata-size:15px;font-size:16px}.portfolio .masthead-inner nav a{font-size:14px}.portfolio .profile p,.portfolio .profile-meta,.portfolio .profile-contact,.portfolio .cv-link{font-size:14px}}
