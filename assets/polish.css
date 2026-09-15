@@ -166,3 +166,11 @@ html[data-theme="dark"] .portfolio .entry h3.teaching-role{color:var(--ink)}
  .portfolio a span[aria-hidden="true"]{display:none}
  .portfolio .links a{overflow-wrap:anywhere}
 }
+
+/* Keep specialized CV entries aligned with the simple Internships hierarchy. */
+.cv-page .research-entry-header,.cv-page .teaching-entry-header{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;margin-bottom:0}
+.cv-page .research-entry-header .tag,.cv-page .teaching-entry-header .tag{order:-1;margin:0;align-self:flex-start}
+.cv-page .entry h3.research-role,.cv-page .entry h3.teaching-role{margin:0;color:var(--ink);font-weight:700}
+.cv-page .research-topic,.cv-page .teaching-topic{margin:0 0 10px;color:var(--ink);font:400 16px/1.65 var(--sans)}
+@media(max-width:800px){.cv-page .research-topic,.cv-page .teaching-topic{font-size:16px}.cv-page a span[aria-hidden="true"]{display:none}}
+@media print{.cv-page .research-entry-header,.cv-page .teaching-entry-header{gap:5px}.cv-page .research-topic,.cv-page .teaching-topic{font:400 10pt/1.5 Arial,sans-serif;margin-bottom:6px}}
