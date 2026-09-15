@@ -157,3 +157,12 @@ html[data-theme="dark"] .portfolio .entry h3.teaching-role{color:var(--ink)}
 .portfolio .activities strong{font-size:17px}
 .portfolio .activities p{font-size:15px}
 @media(max-width:700px){.portfolio{--page-title-size:34px;--entry-title-size:19px;--section-title-size:18px;--metadata-size:15px;font-size:16px}.portfolio .masthead-inner nav a{font-size:14px}.portfolio .profile p,.portfolio .profile-meta,.portfolio .profile-contact,.portfolio .cv-link{font-size:14px}}
+
+/* Mobile entries use the full line for long titles; status follows underneath. */
+@media(max-width:700px){
+ .portfolio .entry-top,.portfolio .research-entry-header,.portfolio .teaching-entry-header{grid-template-columns:minmax(0,1fr);gap:8px}
+ .portfolio .entry-top .tag,.portfolio .research-entry-header .tag,.portfolio .teaching-entry-header .tag{grid-column:1;grid-row:2;justify-self:start}
+ .portfolio .entry-top h3,.portfolio .research-role,.portfolio .teaching-role{grid-column:1;grid-row:1;max-width:none}
+ .portfolio a span[aria-hidden="true"]{display:none}
+ .portfolio .links a{overflow-wrap:anywhere}
+}
