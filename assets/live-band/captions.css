@@ -1,0 +1,14 @@
+.band-gallery{gap:18px 4px}
+.band-frame{margin:0;padding:7px;background:var(--surface);border:1px solid var(--line);border-radius:4px;box-shadow:0 8px 20px #0003;transform:rotate(-3deg);transition:transform .22s ease,box-shadow .22s ease;position:relative;z-index:1;min-width:0}
+.band-frame:nth-child(2){transform:translate(-5px,18px) rotate(3deg)}
+.band-frame:nth-child(3){transform:translate(5px,-4px) rotate(2deg)}
+.band-frame:nth-child(4){transform:translate(-5px,12px) rotate(-3deg)}
+.band-frame .band-photo{padding:0;border:0;box-shadow:none;transform:none}
+.band-frame:nth-child(2) img{object-position:50% 36%}
+.band-frame figcaption{padding:13px 7px 8px;font:500 14px/1.6 var(--sans);color:var(--ink)}
+.band-frame .figure-number{display:block;margin-bottom:4px;color:var(--muted);font:600 12px/1.5 var(--sans);letter-spacing:.06em}
+.band-frame:focus-within{z-index:4;transform:translateY(-5px) rotate(0)}
+@media(hover:hover){.band-frame:hover{z-index:4;transform:translateY(-7px) rotate(0);box-shadow:0 16px 32px #0004}.band-frame .band-photo:hover{transform:none}}
+@media(max-width:600px){.band-frame:nth-child(n){transform:rotate(-2deg)}.band-frame:nth-child(2n){transform:rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){.band-frame{transition:none}.band-frame:nth-child(n){transform:none}}
+@media print{.band-frame:nth-child(n){transform:none;box-shadow:none;break-inside:avoid}}
