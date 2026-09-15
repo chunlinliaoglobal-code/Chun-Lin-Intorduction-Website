@@ -122,3 +122,15 @@ html[data-theme="dark"] .portfolio .research-entry .entry-top h3{color:var(--ink
 
 /* Allow the expanded name to wrap beside the theme selector on small screens. */
 .portfolio .masthead-inner .wordmark{white-space:normal;line-height:1.4}
+
+/* Keep the sticky portrait close to the desktop masthead. */
+@media(min-width:1201px){.portfolio .profile{top:104px}}
+@media(min-width:1201px) and (max-width:1350px){.portfolio .masthead{position:relative}.portfolio .profile{top:24px}}
+
+/* Keep entry statuses aligned at the right edge and clarify research hierarchy. */
+.portfolio .entry-top,.portfolio .research-entry-header{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:12px}
+.portfolio .entry-top .tag,.portfolio .research-entry-header .tag{grid-column:2;justify-self:end;margin:0}
+.portfolio .entry h3.research-role{font:700 var(--entry-title-size)/1.5 var(--sans);color:var(--ink);letter-spacing:-.25px;margin:0!important}
+.portfolio .research-topic{font:600 16px/1.65 var(--sans);color:var(--accent);margin:2px 0 0!important}
+html[data-theme="dark"] .portfolio .entry h3.research-role{color:var(--ink)}
+@media(max-width:700px){.portfolio .research-topic{font-size:15px}.portfolio .research-entry-header{flex-wrap:nowrap}}
